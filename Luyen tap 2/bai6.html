@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    function checkSoNguyenDuong(x) {
+        let flag = false;
+        if (x > 0 && x % 1 == 0) {
+            flag = true
+        }
+        return flag;
+    }
+    let number = prompt('Vui lòng nhập số bất kì')
+     if (checkSoNguyenDuong(number)) {
+         alert('Số bạn vừa nhập là số nguyên dương')
+     } else {
+         alert('Số bạn vừa nhập không phải là số nguyên dương')
+     }
+</script>
