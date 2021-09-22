@@ -8,3 +8,23 @@
 
 </body>
 </html>
+
+<script>
+    function checkKiTu(array,x) {
+        let flag = false;
+        index = ''
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] == x) {
+                index += i + ', '
+                flag = true;
+            }
+        }
+        return flag
+    }
+
+    if (checkKiTu('Một cây làm chẳng lên non', 'n')) {
+        alert('Có và nằm ở vị trí ' + index)
+    } else {
+        alert('Không có kí tự đó')
+    }
+</script>
