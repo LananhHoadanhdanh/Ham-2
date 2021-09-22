@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    function checkDoiXung(array) {
+        let newArr = array.split()
+        let flag = true;
+        for (let i = 0; i < newArr.length / 2; i++) {
+            if (newArr[i] !== newArr[newArr.length - 1]) {
+                flag = false;
+                break;
+            }
+        }
+        return flag
+    }
+
+    if (checkDoiXung('redder')) {
+        alert('Ok đó')
+    } else {
+        alert('Không được đâu')
+    }
+</script>
