@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Chuyển đổi giữa feet và meter</h1>
+<h3>Nhập số cần chuyển đổi:</h3>
+<p>Meter: <label><input type="text" oninput="meterToFeet()" id="mToF"></label></p>
+<p>Feet: <label><input type="text" oninput="feetToMeter()" id="fToM"></label></p>
+</body>
+</html>
+<script>
+    function mtf(meter) {
+        let foot = 3.279 * meter
+        return foot;
+    }
+    function ftm(foot) {
+        let meter = 0.305 * foot
+        return meter;
+    }
+
+
+    function meterToFeet() {
+        let m = +document.getElementById('mToF').value;
+        if (m == "") {
+            document.getElementById('fToM').innerHTML = "";
+        } else {
+            document.getElementById('fToM').innerHTML = mtf(m);
+        }
+    }
+    function feetToMeter() {
+        let f = +document.getElementById('fToM').value;
+        if (f == "") {
+            document.getElementById('mToF').innerHTML = "";
+        } else {
+            document.getElementById('mToF').innerHTML = ftm(f);
+        }
+    }
+</script>
