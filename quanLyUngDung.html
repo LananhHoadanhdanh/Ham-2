@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>ADD NEW PRODUCT</h2>
+<label><input type="text" id="typeMatHang"></label> <button onclick="add()">Add</button>
+<p ><span> DISPLAY ALL PRODUCTS</span></p>
+<p id="display"><br></p>
+<script>
+    function hienThi(matHang) {
+        let list = "<table>";
+        list = list + "<tr>"
+        list = list + "<td>" + 'Product:' + "</td>";
+        list = list + "<td>" + "</td>";
+        list = list + "<td style='text-align: right'>" + matHang.length + "</td>"
+        list = list + "</tr>";
+        for (let i = 0; i < matHang.length; i++) {
+            list = list + "<tr>"
+            list = list + "<td>" + (i + 1) + '. ' + matHang[i] + "</td>";
+            list = list + "<td>" + '<button id='+i+' type="button" onClick="edit(this.id)">Edit</button>' + "</td>";
+            list = list + "<td>" + '<button name='+i+' type="button" onClick="del(this.name)">Delete</button>' + "</td>"
+            list = list + "</tr>";
+        }
+        list = list + "</table>"
+        document.getElementById('display').innerHTML = list;
+    }
+    let products = ['Sony Xperia', 'Samsung Galaxy', 'Nokia 6', 'Xiaomi Redmi Note 4', 'Apple Iphone 6S'];
+    hienThi(products);
+
+    function add() {
+        let newMatHang = document.getElementById('typeMatHang').value;
+        products.push(newMatHang);
+        hienThi(products);
+    }
+
+    function edit(id) {
+        let editPro = prompt("Type new name: ")
+        products[id] = editPro;
+        hienThi(products);
+    }
+
+    function del(name) {
+        products.splice(name,1);
+        hienThi(products);
+    }
+
+
+</script>
+</body>
+</html>
